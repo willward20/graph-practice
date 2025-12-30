@@ -1,7 +1,6 @@
-from get_adj_list import get_adj_list
 
 def bfs_shortest_path_grid(grid, start, end):
-    """Find a shortest path from a start node to an end node."""
+    """Find a shortest path from a start node to an end node on a grid."""
 
     # Initialize data structures
     path = []
@@ -10,8 +9,8 @@ def bfs_shortest_path_grid(grid, start, end):
     parent = {}
     directions = [[-1,0], [1,0], [0,-1], [0,1]]
 
-    num_rows = len(grid)
-    num_cols = len(grid[0])
+    n_rows = len(grid)
+    n_cols = len(grid[0])
 
     # Search until the queue is empty or the end node is found
     while queue != []:
@@ -28,7 +27,7 @@ def bfs_shortest_path_grid(grid, start, end):
             d_row = node_i + i_dir
             d_col = node_j + j_dir
 
-            if d_row >= 0 and d_row < num_rows and d_col >= 0 and d_col < num_cols:
+            if d_row >= 0 and d_row < n_rows and d_col >= 0 and d_col < n_cols:
                 
                 neighbor = (d_row, d_col)
 
